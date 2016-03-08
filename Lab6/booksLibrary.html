@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books Library</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+	<script src="booksLibrary.js"></script>
+</head>
+<body>
+	<h1>Library</h1>
+	<div>
+		Search for book by <b>NAME</b> or <b>ISBN</b>.<br>
+		<input id="search" type="text"></input>
+		<input id="searchSubmit" type="button" value="Find it!" onclick="find()"></input>
+	</div>
+	<script type="text/javascript">
+		function find() {
+			var input = $('#search').val();
+			var shelf = Library.prototype.isAvailabe(input);
+			if(typeof shelf != 'undefined') {
+				$('#result').html("Your book can be found in <b>Shelf " + (parseInt(s)+1) + "</b>");
+			} else {
+				$('#result').html("Specified book is checked out or is not available. Please try again.");
+			}
+		}
+	</script>
+	<div>
+		<div id="libraryTable">Click on desired book to get more details.</div>
+		<div id="Description"></div>
+	</div>
+</body>
+</html>
