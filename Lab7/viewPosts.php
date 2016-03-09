@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['validated'] = "true";
 $file = file_get_contents('posts.txt');
 $postArray = json_decode($file);
 
@@ -23,24 +23,32 @@ function table(){ //creates the table
 
 ?>
 
-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Feeds
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="logout" align="right">
+	<a href="logout.php">Logout</a>
+</div>
 <script type="text/javascript">
-function posts () {
-	posts.prototype.editPost = {}
-}
-function doSomething(key,value) { //prompt
-    var newPost = prompt("Edit Post", key);
-}
+	function posts () {
+		posts.prototype.editPost = {}
+	}
+	function doSomething(key,value) { //prompt
+	    var newPost = prompt("Edit Post", key);
+	}
+	function submitPost() {
+
+	}
 </script>
 
-<html> 
-<title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-</title>
-<body>
-
-<form action="viewPosts.php" method="post">
 <?php table();?>
+<form action="viewPosts.php" method="post">
 New Post: <br>
 <textarea name="message" cols="40" rows="5"></textarea>
 <input type="submit" action="submitPost()">
