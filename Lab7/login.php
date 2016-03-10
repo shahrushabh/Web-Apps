@@ -15,10 +15,20 @@ session_start();
 	}
 ?>
 <script type="text/javascript">
-	$('#sub_button').click(function() {
-		$.ajax({url: "checkLogin.php",
-				type: "POST",
-				data: [$('#username'), $('#password')]});
+	$(document).ready(function() {
+		$('#sub_button').click(function() {
+			var username = $('#username').val();
+			var password = $('#password').val();
+			$.ajax({url: "checkLogin.php",
+					type: "post",
+					datatype: "json",
+					data: {"username":username,"password":password},
+					success: function(data) {
+						if(data.result === "verified") {
+							
+						}
+					}});
+		});
 	});
 </script>
 <form align="center" method="post">

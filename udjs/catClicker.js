@@ -5,8 +5,10 @@ $(document).ready(
 	}
 )
 
-function Cat() {
+function Cat(srce, givenName) {
 	this.numClicks = 0;
+	this.image = "<img id=\"" + givenName + "\" src=\"" + srce + "\" </img>";
+	this.name = givenName;
 }
 
 Cat.prototype.generateCat = function() {
@@ -14,12 +16,11 @@ Cat.prototype.generateCat = function() {
 	var Cats = [];
 	for (var i = 0; i < 2; i++) {
 		cats[i] = "cat" + (i+1) + ".jpg";
-		Cats[i] = new Cat();
-		var templet = "<img id=\"Cat" + (i+1) + "\" src=\"" + cats[i] + "\" </img>";
+		Cats[i] = new Cat(cats[i],("\"Cat" + (i+1)));
+		var templet = "<a href=\"" + cats[i] +"> \"<img id=\"Cat" + (i+1) + "\" src=\"" + cats[i] + "\" </img> </a>";
 		var clicks = "<div id=\"cl" + (i+1) + "\" </div>";
-		$('#cats').append(templet);
-		// $('#Cat' + (i+1)).append(clicks);
-		$('#cats').append(clicks);
+		$('#catThumbs').append(templet);
+		$('#catThumbs').append(clicks);
 		$("#Cat" + (i+1)).click(function () {
 			var index = this.id.split("")[this.id.length-1];
 			Cats[index-1].numClicks += 1;
