@@ -9,14 +9,16 @@ session_start();
 </head>
 <body>
 <h1 align="center">Sign In</h1>
-<?php
-	if(isset($_SESSION['validated']) &&  ($_SESSION['validated'] == "false")) {
-		echo "<div align=\"center\"><label style=\"color: red\"; align=\"center\">Invalid Username and/or password.</label></div>";
-	}
-?>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#sub_button').click(function() {
+<form align="center" id="loginForm">
+	Username: <input type="text" id="username" autofocus></input><br><br>
+	Password: <input type="password" id="password"></input><br><br>
+</form>
+<div align="center">
+	<input type="submit" id = "sub_button" value="Log In"></input>
+</div>
+
+	<script type="text/javascript">
+		$('#sub_button').click(function submit() {
 			var username = $('#username').val();
 			var password = $('#password').val();
 			$.ajax({url: "checkLogin.php",
@@ -24,17 +26,18 @@ session_start();
 					datatype: "json",
 					data: {"username":username,"password":password},
 					success: function(data) {
-						if(data.result === "verified") {
-							
+						var response = JSON.parse(data)['result'];
+						console.log(response);
+						if(response !== "verified") {
+							var error = "<div id=\"error\" align=\"center\"><label style=\"color: red\"; align=\"center\">Invalid Username and/or password.</label></div><br>";
+							$('#loginForm').prepend(error);
+						} else {
+							window.location.href = "../Lab7/viewPosts.php";
 						}
-					}});
+					}
+				}
+			);
 		});
-	});
-</script>
-<form align="center" method="post">
-		Username: <input type="text" id="username" autofocus></input><br><br>
-		Password: <input type="password" id="password"></input><br><br>
-		<input type="submit" id = "sub_button" value="Log In"></input>
-</form>
+	</script>
 </body>
 </html>

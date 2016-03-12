@@ -5,6 +5,7 @@ $(document).ready(
 	}
 )
 
+
 function Cat(srce, givenName) {
 	this.numClicks = 0;
 	this.image = "<img id=\"" + givenName + "\" src=\"" + srce + "\" </img>";

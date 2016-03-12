@@ -13,20 +13,11 @@ foreach ($darr as $index => $jsons) {
         if($pass == $objvars['password']) {
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['validated'] = "true";
-            echo "{\"result\":\"verified\"\"}";
-            // header('Location: ../Lab7/viewPosts.php');
-        } else {
-            // echo "Invalid username and/or password. <a href=\"login.html\">Please try again!</a>";
-            $_SESSION['validated'] = "false";
-            echo "{\"result\":\"verified\"\"}";
+            echo "{\"result\":\"verified\"}";
+            exit();
         }
     }
-    else {
-        $_SESSION['validated'] = "false";
-        echo "{\"result\":\"verified\"\"}";
-        // header("Location: ../Lab7/login.php");
-    }
-
 }
-
+$_SESSION['validated'] = "false";
+echo "{\"result\":\"notverified\"}";
 ?>
