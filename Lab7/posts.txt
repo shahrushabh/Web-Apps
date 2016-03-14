@@ -1,8 +1,1 @@
-[
-	{"michael" : "There are bunch of posts by many people."},
-	{"michael" : "Just some thigs people posted."},
-	{"rushabh" : "One more thing."},
-	{"michael" : "Keeps growing."},
-	{"rushabh" : "Never stops."},
-	{"rushabh" : "And one more thing."}
-]
+[{"michael":"There are bunch of posts by many people."},{"michael":"Just some thigs people posted."},{"rushabh":"Just something something something"},{"michael":"Keeps growing........--->>>>>"},{"rushabh":"Hey..!"},{"rushabh":"And one more thing."},{"rushabh":"Hello There!!"},{"michael":"ABCDABCDABCD"},{"test":"This is my first post!!"},{"abc":"This post is by abc!"}]
