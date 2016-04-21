@@ -1,0 +1,6 @@
+1. Export to $CLASSPATH : 
+	export CLASSPATH=".:/home/rushabhs/Desktop/COMS319/Exercise09-antlr_lexer/02_examples/antlr-4.5.2-complete.jar:$CLASSPATH"
+2. Alias : antlr4
+	alias antlr4='java -jar /home/rushabhs/Desktop/COMS319/Exercise09-antlr_lexer/02_examples/antlr-4.5.2-complete.jar'
+3. Alias : grun
+	alias grun='java org.antlr.v4.gui.TestRig'
