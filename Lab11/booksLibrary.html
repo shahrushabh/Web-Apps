@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books Library</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+    <div ng-app="Library" ng-controller="parent-controller">
+        <div ng-controller="library-controller">
+            <a href="#/library_view"> Library View </a> &nbsp;
+            <a href="#/book_view"> Book View </a>
+            <div data-ng-view=""></div>
+        </div>
+    </div>
+</body>
+</html>

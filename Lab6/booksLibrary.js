@@ -73,7 +73,7 @@ Library.prototype.createTable = function() {
     mytable = $("<table id='table' border='2'></table>"); 		// creates DOM elements
     mytablebody = $('<tbody></tbody>');
 	curr_row = $('<tr bgcolor="lightgreen"></tr>');
-// Create the title.
+// Genrate the title.
     for(col = 0; col < l.__proto__.shelves.length; col++) {
         curr_cell = $('<td width="50"></td>');
         curr_text = 'Shelf'+(col+1);

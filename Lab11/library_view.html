@@ -1,0 +1,24 @@
+<h1>Library</h1>
+<div ng-app="Library" ng-controller="library-controller">
+    <div>
+        Search for book by <b>NAME</b>.<br>
+        <input id="search" type="text" ng-model="search"></input>
+        <input id="searchSubmit" type="button" value="Find it!" ng-click="find()"></input>
+    </div><br>
+    <div id="libraryTable">Click on desired book and navigate to book view to see details.</div><br>
+    <table id="lib" border="2">
+        <th ng-repeat="shelf in Library">
+            Shelf {{$index+1}}
+        </th>
+        <tr ng-repeat="shelf in Library">
+            <td ng-repeat="book in shelf track by $index" ng-click="details($event,$parent.$index,$index)"
+                    ng-class="{active: (details.parent == $parent.$index && details.index == $index )}">
+                <span> {{book.name}} </span>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div>
+        <div id="Description" ng-bind="search_result"></div>
+    </div>
+</div>
