@@ -1,0 +1,29 @@
+[ 
+    {
+        "username" : "michael", 
+        "password":"bonpua",
+        "address" : "6517 walnut grove ln n",
+        "city" : "maple grove",
+        "state" : "MN",
+        "zipcode" : "55311",
+        "phone" : "6127479408"
+    },
+    {
+        "username" : "test", 
+        "password":"test",
+        "address" : "6517 test ln s",
+        "city" : "minneapolis",
+        "state" : "MN",
+        "zipcode" : "55446",
+        "phone" : "1234567890"
+    },
+    {
+        "username" : "rushabh", 
+        "password":"shah",
+        "address" : "5642 lincoln way",
+        "city" : "ames",
+        "state" : "IA",
+        "zipcode" : "50010",
+        "phone" : "12675346754"
+    }
+] 
